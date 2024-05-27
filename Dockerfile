@@ -10,12 +10,12 @@ WORKDIR /freebsd
 RUN apt-get -y update && \
     apt-get -y install build-essential m4 bison flex libtool automake autoconf autogen pkg-config curl
 
-RUN curl -OL 'http://ftp.swin.edu.au/freebsd/releases/amd64/12.1-RELEASE/base.txz'
-RUN curl -OL 'http://ftp.swin.edu.au/gnu/binutils/binutils-2.32.tar.xz'
-RUN curl -OL 'http://ftp.swin.edu.au/gnu/gmp/gmp-6.1.2.tar.xz'
-RUN curl -OL 'http://ftp.swin.edu.au/gnu/mpfr/mpfr-4.0.2.tar.xz'
-RUN curl -OL 'http://ftp.swin.edu.au/gnu/mpc/mpc-1.1.0.tar.gz'
-RUN curl -OL 'http://ftp.swin.edu.au/gnu/gcc/gcc-6.4.0/gcc-6.4.0.tar.xz'
+RUN curl -OL 'http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/amd64/12.1-RELEASE/base.txz'
+RUN curl -OL 'https://ftpmirror.gnu.org/gnu/binutils/binutils-2.32.tar.xz'
+RUN curl -OL 'https://ftpmirror.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz'
+RUN curl -OL 'https://ftpmirror.gnu.org/gnu/mpfr/mpfr-4.0.2.tar.xz'
+RUN curl -OL 'https://ftpmirror.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz'
+RUN curl -OL 'https://ftpmirror.gnu.org/gnu/gcc/gcc-6.4.0/gcc-6.4.0.tar.xz'
 
 RUN mkdir -p /src/base /freebsd/x86_64-pc-freebsd12 && \
     tar -C /src/base -Jxf base.txz
